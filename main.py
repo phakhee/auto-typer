@@ -7,7 +7,7 @@ import json
 import sys
 from alfabet_jig import jig
 
-IGNORE_JIG_WILDCARD = True
+IGNORE_JIG_WILDCARD = "*"
 
 keyboard = Controller()
 random_sentences = []
@@ -69,8 +69,8 @@ if len(random_sentences) > 0:
         prev_ch = ""
 
         # If the sentence starts with a wildcard then we do not want to jig
-        ignore_jig = random_sentence[0] != IGNORE_JIG_WILDCARD
-        if not ignore_jig:
+        ignore_jig = random_sentence[0] == IGNORE_JIG_WILDCARD
+        if ignore_jig:
             # Jigging is disabled for this sentence, remove the * wildcard
             random_sentence = random_sentence[1:]
 
