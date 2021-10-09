@@ -1,4 +1,3 @@
-import faster as faster
 from pynput.keyboard import Key, Controller
 import time
 import random
